@@ -27,8 +27,18 @@
 (xterm-mouse-mode)
 
 (ido-vertical-mode t)
+(projectile-global-mode t)
 
-;; 
+(require 'powerline)
+(powerline-evil-vim-color-theme)
+(display-time-mode t)
+
+
+;; File associations
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+
+
+;; Disable backup files 
 (setq make-backup-files nil)
 
 
@@ -45,6 +55,7 @@
 
 
 ;; Evil-mode
+(require 'evil-leader)
 (global-evil-leader-mode t)
 (evil-leader/set-leader ",")
 
@@ -55,8 +66,9 @@
 (evil-leader/set-key
   "e" 'find-file
   "x" 'smex
-  "f" 'projectile-find-file
+  "f" 'helm-projectile
   "b" 'switch-to-buffer
+  "g" 'helm-do-grep
   "k" 'kill-buffer)
 
 
@@ -75,4 +87,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(linum ((t (:background "#2f2f2f" :foreground "yellow")))))
