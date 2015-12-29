@@ -1,3 +1,19 @@
+;; Miscellaneous
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "405b0ac2ac4667c5dab77b36e3dd87a603ea4717914e30fcf334983f79cfd87e" default))))
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(linum ((t (:background "brightblack" :foreground "color-232")))))
 
 (set-keyboard-coding-system nil)
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
@@ -28,11 +44,15 @@
 
 (ido-vertical-mode t)
 (projectile-global-mode t)
+(rainbow-delimiters-mode t)
+(global-linum-mode t)
 
-(require 'powerline)
-(powerline-evil-vim-color-theme)
-(display-time-mode t)
+;(require 'powerline)
+;;(powerline-evil-vim-color-theme)
+;;(display-time-mode t)
 
+
+(sml/setup)
 
 ;; File associations
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
@@ -72,19 +92,3 @@
   "k" 'kill-buffer)
 
 
-;; Miscellaneous
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("405b0ac2ac4667c5dab77b36e3dd87a603ea4717914e30fcf334983f79cfd87e" default))))
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(linum ((t (:background "#2f2f2f" :foreground "yellow")))))
