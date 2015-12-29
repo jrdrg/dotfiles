@@ -31,8 +31,14 @@
       (package-refresh-contents))
     (package-install package)))
 
+
+;; Spaces instead of tabs
+(setq-default indent-tabs-mode nil)
+
+
 ;; Theme stuff
 (load-theme 'mustard t)
+
 
 ;; Mouse scrolling
 (defun up-slightly () (interactive) (scroll-up 1))
@@ -47,12 +53,15 @@
 (rainbow-delimiters-mode t)
 (global-linum-mode t)
 
-;(require 'powerline)
+
+;;(require 'powerline)
 ;;(powerline-evil-vim-color-theme)
 ;;(display-time-mode t)
 
 
+;; Smart-mode-line
 (sml/setup)
+
 
 ;; File associations
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
@@ -65,6 +74,7 @@
 ;; Highlight parentheses
 (setq show-paren-delay 0)
 (show-paren-mode 1)
+
 
 ;; Clojurescript figwheel REPL
 (defun figwheel-repl ()
@@ -87,7 +97,7 @@
   "e" 'find-file
   "x" 'smex
   "f" 'helm-projectile
-  "b" 'switch-to-buffer
+  "b" 'helm-buffers-list
   "g" 'helm-do-grep
   "k" 'kill-buffer)
 
